@@ -1,0 +1,12 @@
+[target.armv5te-unknown-linux-gnueabi]
+linker="arm-none-eabi-gcc"
+#rustflags = ["-Zextra-link-arg"] //新版本不再需要这个支持
+
+[build]
+target="armv5te-unknown-linux-gnueabi"
+
+[profile.dev]
+panic = "abort" #关闭默认的panic栈回溯功能，裸机环境没有这个功能，直接abort
+
+[profile.release]
+panic = "abort" #关闭默认的panic栈回溯功能，裸机环境没有这个功能，直接abort
