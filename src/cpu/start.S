@@ -15,7 +15,7 @@ clbss_l:
     strlo	r2, [r0]		/* clear 32-bit BSS word */
     addlo	r0, r0, #4		/* move to next */
     blo	clbss_l
-    ldr r0, =0x80000  /*stack top!!!!!*/
+    ldr r0, =__stack_top    /*stack top!!!!!*/
     bic	r0, r0, #7	/* 8-byte alignment for ABI compliance */
     mov	sp, r0
     bl base_init

@@ -26,5 +26,7 @@ SECTIONS {
         *(.bss*)
     }
     __bss_end = .;
+    . = . + 1M;
+    __stack_top = ALIGN(1M);
     ASSERT(. <= (10M), "image has exceeded its limit.")
 }
